@@ -2,6 +2,7 @@ import { PropsWithChildren, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
 type DismissableBlurbProps = PropsWithChildren<{
+  /** defaultOpen determines if blurb is open by default or not. **/
   defaultOpen?: Boolean
 }>
 

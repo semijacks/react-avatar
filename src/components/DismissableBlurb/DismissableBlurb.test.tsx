@@ -9,17 +9,22 @@ describe('Dismissable Blurb', () => {
   beforeEach(() => {
     cleanup()
   })
-  it('Renders dismissable blurb', () => {
+  it('Renders children inside blurb', () => {
     render(
       <DismissableBlurb>
         <h3>Hello</h3>
       </DismissableBlurb>
     )
 
-    const closeButton = screen.getByTestId('close-svg')
     const text = screen.getByText(/Hello/i)
-    expect(closeButton).toBeInTheDocument()
     expect(text).toBeInTheDocument()
+  })
+
+  it('Checks that close button exists', () => {
+    render(<DismissableBlurb />)
+
+    const closeButton = screen.getByTestId('close-svg')
+    expect(closeButton).toBeInTheDocument()
   })
 
   it('Expect blurb on close on button click', () => {
